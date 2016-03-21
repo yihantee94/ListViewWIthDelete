@@ -6,12 +6,11 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AtomPayListAdapter adapter;
+    private FoodChoiceListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,26 +19,26 @@ public class MainActivity extends AppCompatActivity {
 
         setupListViewAdapter();
 
-        setupAddPaymentButton();
+        setupAddFoodChoiceButton();
     }
 
-    public void removeAtomPayOnClickHandler(View v) {
-        AtomPayment itemToRemove = (AtomPayment)v.getTag();
+    public void removeFoodChoiceOnClickHandler(View v) {
+        FoodChoice itemToRemove = (FoodChoice)v.getTag();
         adapter.remove(itemToRemove);
     }
 
     private void setupListViewAdapter() {
-        adapter = new AtomPayListAdapter(MainActivity.this, R.layout.atom_pay_list_item, new ArrayList<AtomPayment>());
-        ListView atomPaysListView = (ListView)findViewById(R.id.EnterPays_atomPaysList);
-        atomPaysListView.setAdapter(adapter);
+        adapter = new FoodChoiceListAdapter(MainActivity.this, R.layout.food_list_view, new ArrayList<FoodChoice>());
+        ListView foodChoiceListView = (ListView)findViewById(R.id.foodChoiceList);
+        foodChoiceListView.setAdapter(adapter);
     }
 
-    private void setupAddPaymentButton() {
-        findViewById(R.id.EnterPays_addAtomPayment).setOnClickListener(new View.OnClickListener() {
+    private void setupAddFoodChoiceButton() {
+        findViewById(R.id.addFoodChoiceButton).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                adapter.insert(new AtomPayment("", 0), 0);
+                adapter.insert(new FoodChoice("", 0), 0);
             }
         });
     }

@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ListViewWithDelete</string>
-    <string name="EnterPays_atomPay_nameHint">nazwa platnosci</string>
-    <string name="EnterPays_TextView_ZeroValue">0</string>
-    <string name="EnterPays_addPayment">Add Payment</string>
+    <string name="insertFoodChoice">Insert Food Choice</string>
+    <string name="foodChoice">Add Food Choice</string>
 </resources>
